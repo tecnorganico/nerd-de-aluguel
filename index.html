@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Metadados básicos: dão contexto ao navegador, buscadores e tecnologias assistivas. -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="apoio humano para organizar, configurar e entender a tecnologia no dia a dia." />
+    <meta name="theme-color" content="#173b3f" />
+    <title>nerd de aluguel — tecnologia pra vida real</title>
+
+    <!-- Estilos locais: manter a página portátil facilita publicar no GitHub Pages. -->
+    <style>
+      /* Tokens visuais centralizam a identidade e tornam alterações futuras simples. */
+      :root { --ink:#173b3f; --paper:#fffaf0; --cream:#f2e7d5; --sun:#f3b544; --clay:#c65d43; --leaf:#52745f; --muted:#536368; --white:#fff; --shadow:0 14px 35px rgba(23,59,63,.12); --radius:1.25rem; }
+      /* Reset pequeno e previsível: evita diferenças desnecessárias entre navegadores. */
+      *,*::before,*::after{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6} img,video{max-width:100%;height:auto} a{color:inherit} button,a{min-height:2.75rem} :focus-visible{outline:4px solid var(--sun);outline-offset:4px}
+      /* Utilitário para conteúdo que só precisa ser anunciado por leitores de tela. */
+      .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+      /* Faixa superior informa o benefício principal sem ocupar a navegação. */
+      .skip-link{position:absolute;left:1rem;top:-5rem;background:var(--sun);color:var(--ink);padding:.6rem 1rem;border-radius:.5rem;z-index:10}.skip-link:focus{top:1rem}
+      /* Cabeçalho compacto, com navegação que continua útil em celular. */
+      header{border-bottom:1px solid rgba(23,59,63,.15);background:var(--paper)} .nav-wrap{max-width:72rem;margin:auto;padding:1rem 1.1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{font-weight:800;text-decoration:none;letter-spacing:-.02em}.brand span{color:var(--clay)} nav ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0;flex-wrap:wrap;justify-content:flex-end}nav a{text-decoration:none;font-size:.93rem;font-weight:650}nav a:hover{text-decoration:underline;text-decoration-thickness:.15em}
+      /* Contêiner padrão mantém as seções legíveis em telas grandes. */
+      .container{max-width:72rem;margin:auto;padding:0 1.1rem}.section{padding:4.5rem 0}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.78rem;font-weight:800;color:var(--clay);margin:0 0 .5rem}.section h2{font-size:clamp(1.8rem,5vw,3rem);line-height:1.08;letter-spacing:-.04em;margin:.2rem 0 1rem}.lede{max-width:42rem;color:var(--muted);font-size:1.08rem}
+      /* Hero apresenta uma promessa concreta e uma única ação principal. */
+      .hero{padding:5rem 0 4rem;background:linear-gradient(135deg,var(--paper),var(--cream))}.hero-grid{display:grid;gap:2rem;align-items:center}.hero h1{max-width:12ch;font-size:clamp(2.7rem,11vw,6.2rem);line-height:.95;letter-spacing:-.07em;margin:0}.hero h1 em{font-style:normal;color:var(--clay)}.hero-card{background:var(--ink);color:var(--white);border-radius:var(--radius);padding:1.4rem;box-shadow:var(--shadow)}.hero-card strong{color:var(--sun)}
+      /* Botões possuem aparência e texto de ação claros, inclusive sem depender de cor. */
+      .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}.button{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;border:2px solid var(--ink);border-radius:999px;padding:.65rem 1.05rem;font-weight:800;background:var(--ink);color:var(--white)}.button.secondary{background:transparent;color:var(--ink)}.button:hover{transform:translateY(-1px)}
+      /* Grades de cartões organizam serviços sem esconder informação em carrosséis. */
+      .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem;margin-top:2rem}.card{background:var(--white);border:1px solid rgba(23,59,63,.14);border-radius:var(--radius);padding:1.25rem;box-shadow:0 6px 20px rgba(23,59,63,.06)}.card h3{margin-top:0;font-size:1.2rem}.card p{color:var(--muted);margin-bottom:0}.tag{display:inline-block;background:var(--cream);padding:.2rem .55rem;border-radius:999px;font-size:.78rem;font-weight:750}
+      /* Tabela usa rolagem horizontal controlada para preservar leitura no celular. */
+      .table-wrap{overflow-x:auto;margin-top:2rem;border:1px solid rgba(23,59,63,.2);border-radius:var(--radius);background:var(--white)}table{border-collapse:collapse;width:100%;min-width:44rem}caption{text-align:left;padding:1rem;font-weight:700}th,td{text-align:left;padding:.9rem;border-top:1px solid rgba(23,59,63,.14);vertical-align:top}th{background:var(--cream);font-size:.9rem}td small{display:block;color:var(--muted)}
+      /* Bloco de faixas explica solidariedade sem transformar enquadramento em rótulo público. */
+      .notice{background:#fff3c9;border-left:.4rem solid var(--sun);padding:1rem 1.15rem;border-radius:.5rem;margin-top:1.5rem}.notice p{margin:.25rem 0}
+      /* Processo em três passos reduz a carga cognitiva de quem chega pela primeira vez. */
+      .steps{counter-reset:step;display:grid;gap:1rem;margin-top:2rem}.step{display:grid;grid-template-columns:3rem 1fr;gap:1rem;align-items:start}.step::before{counter-increment:step;content:counter(step);display:grid;place-items:center;background:var(--clay);color:var(--white);border-radius:50%;width:3rem;height:3rem;font-weight:900}.step h3{margin:.25rem 0}.step p{margin:.25rem 0;color:var(--muted)}
+      /* Depoimentos mantêm placeholders honestos até existir autorização de uso. */
+      .testimonial{border-left:.35rem solid var(--leaf);background:var(--white);padding:1rem 1.2rem;border-radius:.5rem}.testimonial p{margin:.2rem 0}.testimonial cite{color:var(--muted);font-style:normal;font-size:.9rem}.media-placeholder{border:2px dashed var(--leaf);padding:1rem;border-radius:.75rem;color:var(--muted);margin-top:1rem}
+      /* FAQ nativo oferece expansão acessível sem depender de JavaScript. */
+      .faq{border-top:1px solid rgba(23,59,63,.18)}details{border-bottom:1px solid rgba(23,59,63,.18);padding:1rem 0}summary{cursor:pointer;font-weight:800;padding:.25rem 0}details p{color:var(--muted);max-width:55rem}
+      /* Rodapé reúne contatos editáveis e evita prometer canais que ainda não foram configurados. */
+      footer{background:var(--ink);color:var(--white);padding:3rem 0}footer a{color:var(--white)}.footer-grid{display:grid;gap:1.5rem}.footer-note{color:#dce7e5;font-size:.9rem}
+      /* Ajustes progressivos: a experiência começa no celular e ganha colunas quando há espaço. */
+      @media (min-width:46rem){.hero-grid{grid-template-columns:1.15fr .85fr}.footer-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(3,1fr)}}
+      /* Pessoas que pedem menos movimento recebem uma experiência estável. */
+      @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.button:hover{transform:none}}
+    </style>
+  </head>
+  <body>
+    <!-- Link de salto evita que quem usa teclado ou leitor de tela atravesse o menu sempre. -->
+    <a class="skip-link" href="#conteudo">pular para o conteúdo</a>
+
+    <!-- Cabeçalho global com uma navegação curta e previsível. -->
+    <header>
+      <div class="nav-wrap">
+        <a class="brand" href="#inicio" aria-label="nerd de aluguel, início">nerd <span>de aluguel</span></a>
+        <nav aria-label="navegação principal">
+          <ul><li><a href="#servicos">serviços</a></li><li><a href="#precos">valores</a></li><li><a href="#contato">contato</a></li></ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Conteúdo principal organiza a jornada de descoberta até o contato. -->
+    <main id="conteudo">
+      <!-- Hero: nomeia o problema e apresenta uma chamada de ação simples. -->
+      <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+        <div class="container hero-grid">
+          <div><p class="eyebrow">tecnologia pra vida real</p><h1 id="titulo-principal">a tecnologia pode caber na sua vida.</h1><p class="lede">eu ajudo a organizar a bagunça digital, configurar seus aparelhos e aprender junto — com paciência, clareza e sem fazer você se sentir perdido.</p><div class="actions"><a class="button" href="#contato">pedir orçamento</a><a class="button secondary" href="#servicos">ver como posso ajudar</a></div></div>
+          <aside class="hero-card" aria-label="diferencial do atendimento"><p class="eyebrow" style="color:var(--sun)">um nerd com escuta</p><p>cada atendimento parte do que você vive, do aparelho que você tem e do ritmo que funciona para você.</p><p><strong>ajuda técnica não precisa exigir a entrega da sua vida inteira.</strong></p></aside>
+        </div>
+      </section>
+
+      <!-- Serviços traduzem a atuação em situações reconhecíveis para o cliente. -->
+      <section class="section" id="servicos" aria-labelledby="titulo-servicos"><div class="container"><p class="eyebrow">onde eu entro</p><h2 id="titulo-servicos">a gente resolve junto.</h2><p class="lede">o serviço começa ouvindo o que está travando. depois, a solução é adaptada ao seu aparelho, à sua rotina e ao seu jeito de aprender.</p><div class="cards"><article class="card"><span class="tag">dia a dia</span><h3>celular, computador e smart tv</h3><p>configuração, aplicativos, contas, atualizações e aquela função que sumiu depois de uma mudança.</p></article><article class="card"><span class="tag">autonomia</span><h3>aulas e orientação</h3><p>prática acompanhada para você fazer sozinho depois, com instruções que façam sentido para a sua mão e sua cabeça.</p></article><article class="card"><span class="tag">organização</span><h3>bagunça digital</h3><p>arquivos, fotos, documentos e rotinas mais fáceis de encontrar, cuidar e continuar.</p></article><article class="card"><span class="tag">negócios</span><h3>pequenos projetos</h3><p>sites, manutenção e organização digital para profissionais autônomos, coletivos e negócios locais.</p></article></div></div></section>
+
+      <!-- Preços tornam a conversa honesta; os valores são editáveis e não substituem orçamento. -->
+      <section class="section" id="precos" aria-labelledby="titulo-precos"><div class="container"><p class="eyebrow">quanto custa</p><h2 id="titulo-precos">clareza antes de começar.</h2><p class="lede">a gente combina o escopo antes. a tabela abaixo é uma referência inicial; casos maiores, materiais e deslocamentos entram na conversa.</p><div class="table-wrap"><table><caption>referência de valores — mão de obra e tempo total estimado</caption><thead><tr><th scope="col">serviço</th><th scope="col">tempo</th><th scope="col">social</th><th scope="col">camarada</th><th scope="col">profissional</th></tr></thead><tbody><tr><th scope="row">suporte remoto pontual</th><td>1h</td><td>r$ 70</td><td>r$ 100</td><td>r$ 180</td></tr><tr><th scope="row">aula individual</th><td>1h30</td><td>r$ 105</td><td>r$ 150</td><td>r$ 270</td></tr><tr><th scope="row">smart tv e youtube</th><td>até 2h30<small>inclui preparo básico</small></td><td>r$ 175</td><td>r$ 250</td><td>r$ 450</td></tr><tr><th scope="row">treinamento de equipe</th><td>4h</td><td>r$ 280</td><td>r$ 400</td><td>r$ 720</td></tr><tr><th scope="row">manutenção de site</th><td>2–4h</td><td>r$ 140–280</td><td>r$ 200–400</td><td>r$ 360–720</td></tr></tbody></table></div><div class="notice"><p><strong>sobre as faixas:</strong> social considera vulnerabilidade digital; camarada apoia ativistas e pessoas próximas; profissional atende empresas, organizações e instituições e ajuda a sustentar as outras faixas.</p><p>deslocamento, materiais e compras específicas são combinados antes. não guardo senhas nem códigos de acesso.</p></div></div></section>
+
+      <!-- Processo reduz ansiedade e mostra o que acontece depois do primeiro contato. -->
+      <section class="section" aria-labelledby="titulo-processo"><div class="container"><p class="eyebrow">sem susto</p><h2 id="titulo-processo">como funciona.</h2><div class="steps"><article class="step"><div><h3>você conta</h3><p>pode ser por texto, áudio ou do jeito que der.</p></div></article><article class="step"><div><h3>a gente combina</h3><p>escopo, formato, faixa e custos ficam claros antes.</p></div></article><article class="step"><div><h3>eu acompanho</h3><p>faço, explico e registro o caminho para você continuar.</p></div></article></div></div></section>
+
+      <!-- Depoimentos aguardam material real e autorização de uso. -->
+      <!-- Depoimentos ficam ocultos nesta primeira publicação e podem ser reativados depois. -->
+      <section class="section" id="depoimentos" aria-labelledby="titulo-depoimentos" hidden><div class="container"><p class="eyebrow">quem já chamou</p><h2 id="titulo-depoimentos">depoimentos, quando você quiser contar.</h2><div class="testimonial"><p>“depoimento real será inserido aqui depois da autorização da pessoa atendida.”</p><cite>— espaço reservado para nome ou identificação autorizada</cite></div><div class="media-placeholder"><strong>áudio e vídeo</strong><br />este espaço receberá mídias com transcrição, descrição e autorização de uso. nenhum conteúdo de cliente é publicado sem combinar antes.</div></div></section>
+
+      <!-- Perguntas frequentes respondem dúvidas sem sobrecarregar a página inicial. -->
+      <section class="section" aria-labelledby="titulo-faq"><div class="container"><p class="eyebrow">antes de chamar</p><h2 id="titulo-faq">perguntas que aparecem bastante.</h2><div class="faq"><details><summary>você atende remotamente?</summary><p>sim. quando a tarefa pede presença, combinamos um atendimento presencial e os custos de deslocamento antes.</p></details><details><summary>atende pessoas idosas ou com dificuldade motora?</summary><p>sim. o atendimento é adaptado ao ritmo da pessoa, aos movimentos possíveis e aos recursos de voz ou atalhos que realmente funcionem no aparelho dela.</p></details><details><summary>como funciona a cobrança por hora?</summary><p>o tempo inclui preparo, encontro, registro e acompanhamento combinados. antes de começar, eu explico a estimativa e aviso se o escopo mudar.</p></details><details><summary>posso mandar minha senha?</summary><p>prefiro que não. quando um acesso for necessário, combinamos uma forma segura de você confirmar a operação sem me entregar a senha.</p></details></div></div></section>
+
+      <!-- Contato concentra a conversão; substitua os placeholders antes da publicação. -->
+      <section class="section" id="contato" aria-labelledby="titulo-contato"><div class="container"><p class="eyebrow">pode chamar</p><h2 id="titulo-contato">me conta o que aconteceu.</h2><p class="lede">não precisa chegar com o nome técnico do problema. descreve a cena, manda um áudio se for mais fácil e eu te ajudo a entender o próximo passo.</p><div class="actions"><a class="button" href="mailto:ramires@cuidadosdigitais.com.br?subject=quero%20pedir%20um%20orçamento">enviar e-mail</a></div><p class="footer-note">por enquanto, o contato público está concentrado neste e-mail.</p></div></section>
+    </main>
+
+    <!-- Rodapé registra identidade, privacidade e o limite da versão inicial. -->
+    <footer><div class="container footer-grid"><div><p class="brand">nerd <span>de aluguel</span></p><p class="footer-note">tecnologia pra vida real, com cuidado e sem enrolação.</p></div><div><p><a href="#inicio">voltar ao início</a></p><p class="footer-note">depoimentos, fotos, áudios e vídeos somente com autorização.</p><p class="footer-note">© 2026 nerd de aluguel.</p></div></div></footer>
+
+    <!-- JavaScript mínimo preserva a página funcional mesmo quando scripts estão bloqueados. -->
+    <script>
+      // Atualiza o ano sem exigir manutenção anual do rodapé.
+      const year = document.querySelector('footer .footer-note:last-child');
+      if (year) year.textContent = `© ${new Date().getFullYear()} nerd de aluguel.`;
+    </script>
+  </body>
+</html>
