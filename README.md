@@ -8,23 +8,14 @@ Landing page estática, mobile-first e acessível para apresentar os serviços d
 - `assets/`: lugar reservado para imagens, áudios e vídeos autorizados. O site foi mantido sem logotipo nesta versão.
 - `CNAME`: domínio personalizado planejado: `cuidadosdigitais.com.br`.
 
-## executar localmente
+## contato
 
-Abra `index.html` no navegador. Para uma prévia mais próxima do GitHub Pages, rode um servidor estático simples a partir desta pasta, por exemplo `python3 -m http.server 8000`, e acesse `http://localhost:8000`.
+- E-mail: `ramires@cuidadosdigitais.com.br`
+- WhatsApp: [+55 21 97722-9377](https://wa.me/5521977229377)
 
-## publicar no GitHub Pages
+O site apresenta suporte tecnológico, aulas e orientação, organização digital e pequenos projetos para pessoas, profissionais autônomos, coletivos e negócios locais. Os valores exibidos são referências por faixa e o escopo final é combinado antes de cada atendimento.
 
-1. Crie um repositório público ou privado no GitHub.
-2. Copie estes arquivos para a raiz do repositório.
-3. Faça um commit e envie para a branch principal.
-4. Em **Settings → Pages**, escolha a branch principal e a pasta `/ (root)`.
-5. Antes de divulgar, substitua os contatos provisórios e faça uma visita completa pelo celular.
-
-## conteúdo que precisa ser preenchido
-
-Antes da publicação, revisar o e-mail, o WhatsApp, a identidade visual definitiva, área de atendimento, formas de pagamento, política de privacidade e os valores. Os preços presentes são a referência documentada em `56 CLIENTES/NERD DE ALUGUEL/TABELA_PRECOS.md`, ainda sujeitos a confirmação de Ramires.
-
-Depoimentos, fotos, áudios e vídeos devem ser adicionados somente após autorização. A seção de depoimentos está temporariamente oculta com o atributo `hidden` no HTML; para reativá-la, remova esse atributo e recrie o link de navegação quando os materiais estiverem prontos. Para cada áudio ou vídeo, incluir transcrição ou descrição equivalente. Não inserir senhas, códigos, documentos pessoais ou outros dados sensíveis.
+Depoimentos, fotos, áudios e vídeos só devem ser publicados com autorização. A seção de depoimentos está temporariamente oculta e todo áudio ou vídeo futuro deve ter transcrição ou descrição equivalente. Não inserir senhas, códigos, documentos pessoais ou outros dados sensíveis.
 
 ## decisões de estilo
 
@@ -39,14 +30,3 @@ Depoimentos, fotos, áudios e vídeos devem ser adicionados somente após autori
 A página usa idioma declarado, um único `h1`, títulos hierárquicos, landmarks semânticos, link para pular ao conteúdo, foco visível, contraste alto, navegação por teclado, `caption` e escopos na tabela, FAQ com `details`, áreas de toque confortáveis e suporte a `prefers-reduced-motion`. Áudio e vídeo futuros precisam de controles, transcrição e descrição.
 
 O texto evita prometer autonomia completa ou resultados garantidos. O orçamento final depende do escopo confirmado, do tempo total, do deslocamento e de custos diretos aprovados.
-
-## revisão antes de publicar
-
-- [x] substituir o e-mail pelo contato profissional confirmado: `ramires@cuidadosdigitais.com.br`;
-- [ ] adicionar WhatsApp somente quando houver um número público confirmado;
-- [ ] confirmar preços, faixas e área de atendimento;
-- [ ] adicionar logo somente se houver arquivo autorizado;
-- [ ] revisar todos os textos com a voz atual do Nerd de Aluguel;
-- [ ] testar zoom, teclado, leitor de tela e celular;
-- [ ] confirmar links e ausência de erros no console;
-- [ ] adicionar somente depoimentos autorizados, com transcrição quando necessário.
