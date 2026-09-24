@@ -5,8 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Favicon e ícone de aba do site. -->
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <!-- Favicon compartilhado com a página inicial, incluindo fallback de navegadores antigos. -->
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/favicon.svg" />
     <!-- Título, descrição e diretivas para buscadores. -->
     <title>suporte tecnológico remoto — nerd de aluguel</title>
@@ -208,9 +209,11 @@
         font-weight: 800;
         text-align: center;
         text-decoration: none;
+        transition: background-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
       }
       .button.secondary { background: transparent; color: var(--ink); }
-      .button:hover { background: var(--clay); color: var(--white); }
+      .button:hover { background: var(--clay); color: var(--white); transform: translateY(-1px); box-shadow: 0 4px 10px var(--card-shadow); }
+      .button.secondary:hover { background: var(--cream); color: var(--ink); }
       .button small { font-weight: 400; font-size: .75rem; }
       .security-note {
         margin: 1rem 0 0;
@@ -241,6 +244,7 @@
           scroll-behavior: auto !important;
           transition-duration: .01ms !important;
         }
+        .button:hover { transform: none; }
       }
     </style>
   </head>
