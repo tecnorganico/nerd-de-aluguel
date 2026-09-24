@@ -6,7 +6,8 @@ Landing page estática, mobile-first e acessível para apresentar os serviços d
 
 - `index.html`: página completa, com HTML semântico, CSS local e JavaScript mínimo.
 - `suporte.html`: página completa de suporte remoto, alinhada visualmente à `index.html` e com downloads oficiais do RustDesk para Windows, macOS, Android e iOS.
-- `assets/`: lugar reservado para imagens, áudios e vídeos autorizados. O site foi mantido sem logotipo nesta versão.
+- `assets/`: imagens, favicon, áudios e vídeos autorizados.
+- `assets/favicon.svg`: ícone da aba e atalho do site, usando a paleta petróleo/amarelo da marca. O site foi mantido sem logotipo nesta versão.
 - `CNAME`: domínio personalizado planejado: `cuidadosdigitais.com.br`.
 
 ## contato
