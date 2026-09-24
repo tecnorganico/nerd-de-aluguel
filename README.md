@@ -5,6 +5,7 @@ Landing page estática, mobile-first e acessível para apresentar os serviços d
 ## arquivos
 
 - `index.html`: página completa, com HTML semântico, CSS local e JavaScript mínimo.
+- `suporte.html`: página completa de suporte remoto, alinhada visualmente à `index.html` e com downloads oficiais do RustDesk para Windows, macOS, Android e iOS.
 - `assets/`: lugar reservado para imagens, áudios e vídeos autorizados. O site foi mantido sem logotipo nesta versão.
 - `CNAME`: domínio personalizado planejado: `cuidadosdigitais.com.br`.
 
@@ -24,6 +25,10 @@ Depoimentos, fotos, áudios e vídeos só devem ser publicados com autorização
 - **layout:** uma coluna no celular, grades fluidas em telas maiores, bastante espaço em branco e tabela com rolagem horizontal controlada.
 - **conteúdo:** a jornada segue problema concreto → serviços → valores → processo → confiança → contato.
 - **decisão de honestidade:** não há depoimentos, clientes ou resultados inventados. Placeholders indicam exatamente o que precisa ser substituído.
+- **temas:** `index.html` alterna entre modo dia (`☀`), modo tarde (`🌇`) e modo noite (`☾`), com escolha restaurada pelo `localStorage`.
+- **suporte:** `suporte.html` usa o mesmo sistema visual, tokens de cor, navegação, acessibilidade e comportamento mobile-first da página principal. A identificação automática do sistema apenas destaca o card recomendado e não esconde as outras opções.
+- **depoimentos:** a seção de depoimentos permanece oculta até existirem materiais reais e autorização de uso.
+- **dependências:** nenhuma dependência externa nova foi adicionada; o site continua sendo HTML, CSS e JavaScript locais, compatível com GitHub Pages.
 
 ## acessibilidade
 
