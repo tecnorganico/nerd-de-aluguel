@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">nerd de aluguel</title>
+  <desc id="desc">ícone circular petróleo com a letra n em amarelo</desc>
+  <rect width="64" height="64" rx="16" fill="#173b3f"/>
+  <circle cx="48" cy="16" r="7" fill="#f3b544"/>
+  <path d="M16 46V18h8l16 17V18h8v28h-8L24 29v17z" fill="#fffaf0"/>
+</svg>

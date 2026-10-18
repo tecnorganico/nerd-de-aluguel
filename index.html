@@ -1,19 +1,76 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
-    <!-- Metadados básicos: dão contexto ao navegador, buscadores e tecnologias assistivas. -->
+    <!-- Idioma, codificação e compatibilidade básica. -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="apoio humano para organizar, configurar e entender a tecnologia no dia a dia." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Favicon e ícone de aba do site. -->
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/favicon.svg" />
+    <!-- Título, descrição e diretivas para buscadores. -->
+    <title>nerd de aluguel — suporte tecnológico humano e acessível</title>
+    <meta name="description" content="suporte tecnológico, organização digital, aulas e configuração de celulares, computadores e smart TVs. atendimento humano, paciente e adaptado à sua rotina." />
+    <meta name="author" content="ramires — nerd de aluguel" />
+    <meta name="keywords" content="suporte técnico, suporte tecnológico, organização digital, aula de celular, configuração de computador, smart tv, acessibilidade digital, nerd de aluguel" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="pt-BR" />
+    <!-- URL principal e aparência quando a página é aberta no celular. -->
+    <link rel="canonical" href="https://cuidadosdigitais.com.br/" />
     <meta name="theme-color" content="#173b3f" />
-    <title>nerd de aluguel — tecnologia pra vida real</title>
+    <meta name="color-scheme" content="light dark" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="nerd de aluguel" />
+    <!-- Metadados de compartilhamento para WhatsApp, Facebook, LinkedIn e similares. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="nerd de aluguel" />
+    <meta property="og:title" content="nerd de aluguel — tecnologia pra respeitar sua vida" />
+    <meta property="og:description" content="ajuda para organizar, configurar e entender a tecnologia no dia a dia, com paciência, clareza e cuidado." />
+    <meta property="og:url" content="https://cuidadosdigitais.com.br/" />
+    <meta property="og:image" content="https://cuidadosdigitais.com.br/assets/ramires-perfil.png" />
+    <meta property="og:image:alt" content="ramires, o nerd de aluguel" />
+    <meta property="og:image:type" content="image/png" />
+    <!-- Metadados de compartilhamento para X/Twitter e serviços compatíveis. -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="nerd de aluguel — tecnologia pra respeitar sua vida" />
+    <meta name="twitter:description" content="suporte tecnológico humano para pessoas, profissionais autônomos, coletivos e negócios locais." />
+    <meta name="twitter:image" content="https://cuidadosdigitais.com.br/assets/ramires-perfil.png" />
+    <meta name="twitter:image:alt" content="ramires, o nerd de aluguel" />
+    <!-- Dados estruturados descrevem o serviço para buscadores que suportam Schema.org. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "nerd de aluguel",
+        "url": "https://cuidadosdigitais.com.br/",
+        "email": "ramires@cuidadosdigitais.com.br",
+        "description": "suporte tecnológico, organização digital, aulas e configuração de dispositivos com atendimento humano e acessível.",
+        "image": "https://cuidadosdigitais.com.br/assets/ramires-perfil.png",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Brasil"
+        },
+        "serviceType": [
+          "suporte tecnológico",
+          "organização digital",
+          "aulas de tecnologia",
+          "configuração de celulares e computadores",
+          "configuração de smart TVs",
+          "acessibilidade digital"
+        ],
+        "sameAs": [
+          "https://blog.bantu.social/tecnorganico"
+        ]
+      }
+    </script>
 
     <!-- Estilos locais: manter a página portátil facilita publicar no GitHub Pages. -->
     <style>
       /* Tokens visuais centralizam a identidade e tornam alterações futuras simples. */
       :root { --ink:#173b3f; --paper:#fffaf0; --cream:#f2e7d5; --sun:#f3b544; --clay:#c65d43; --leaf:#52745f; --muted:#536368; --white:#fff; --line:rgba(23,59,63,.15); --card-shadow:rgba(23,59,63,.06); --notice-bg:#fff3c9; --footer-note:#dce7e5; --shadow:0 14px 35px rgba(23,59,63,.12); --radius:1.25rem; }
       [data-theme="night"] { --ink:#f4f1ea; --paper:#121212; --cream:#242424; --sun:#f5c542; --clay:#ff8066; --leaf:#83b99a; --muted:#c5c5c5; --white:#1d1d1d; --line:rgba(244,241,234,.22); --card-shadow:rgba(0,0,0,.35); --notice-bg:#403516; --footer-note:#d7d7d7; --shadow:0 14px 35px rgba(0,0,0,.4); }
-      [data-theme="pan-african"] { --ink:#000; --paper:#fff9e6; --cream:#fcd116; --sun:#fcd116; --clay:#ce1126; --leaf:#078930; --muted:#263326; --white:#fff; --line:rgba(0,0,0,.2); --card-shadow:rgba(0,0,0,.12); --notice-bg:#fff1a8; --footer-note:#fcd116; --shadow:0 14px 35px rgba(0,0,0,.18); }
+      [data-theme="afternoon"] { --ink:#4d3028; --paper:#fff5e5; --cream:#f6d4a8; --sun:#e9963f; --clay:#b9573f; --leaf:#697b58; --muted:#765f55; --white:#fffdf8; --line:rgba(77,48,40,.2); --card-shadow:rgba(77,48,40,.1); --notice-bg:#ffe6b8; --footer-note:#f6d4a8; --shadow:0 14px 35px rgba(77,48,40,.18); }
       /* Reset pequeno e previsível: evita diferenças desnecessárias entre navegadores. */
       *,*::before,*::after{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--paper);color:var(--ink);font-family:"Comic Sans MS","Comic Sans","Courier New",monospace;line-height:1.6} img,video{max-width:100%;height:auto} a{color:inherit} button,a{min-height:2.75rem} :focus-visible{outline:4px solid var(--sun);outline-offset:4px}
       /* Utilitário para conteúdo que só precisa ser anunciado por leitores de tela. */
@@ -21,13 +78,13 @@
       /* Faixa superior informa o benefício principal sem ocupar a navegação. */
       .skip-link{position:absolute;left:1rem;top:-5rem;background:var(--sun);color:var(--ink);padding:.6rem 1rem;border-radius:.5rem;z-index:10}.skip-link:focus{top:1rem}
       /* Cabeçalho compacto, com navegação que continua útil em celular. */
-      header{border-bottom:1px solid var(--line);background:var(--paper)} .nav-wrap{max-width:72rem;margin:auto;padding:1rem 1.1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{font-weight:800;text-decoration:none;letter-spacing:-.02em}.brand span{color:var(--clay)} nav ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0;flex-wrap:wrap;justify-content:flex-end;align-items:center}nav a{text-decoration:none;font-size:.93rem;font-weight:650}nav a:hover{text-decoration:underline;text-decoration-thickness:.15em}.theme-toggle{border:2px solid var(--ink);border-radius:999px;padding:.45rem .8rem;background:var(--paper);color:var(--ink);font:inherit;font-size:.85rem;font-weight:800;cursor:pointer}.theme-toggle:hover{background:var(--cream)}
+      header{border-bottom:1px solid var(--line);background:var(--paper)} .nav-wrap{max-width:72rem;margin:auto;padding:1rem 1.1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{font-weight:800;text-decoration:none;letter-spacing:-.02em}.brand span{color:var(--clay)} nav ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0;flex-wrap:wrap;justify-content:flex-end;align-items:center}nav a{text-decoration:none;font-size:.93rem;font-weight:650}nav a:hover{text-decoration:underline;text-decoration-thickness:.15em}.theme-toggle{border:2px solid var(--ink);border-radius:999px;padding:.45rem .8rem;background:var(--paper);color:var(--ink);font:inherit;font-size:.85rem;font-weight:800;cursor:pointer;transition:background-color .2s ease, color .2s ease, transform .2s ease}.theme-toggle:hover{background:var(--cream);color:var(--clay);transform:translateY(-1px)}
       /* Contêiner padrão mantém as seções legíveis em telas grandes. */
       .container{max-width:72rem;margin:auto;padding:0 1.1rem}.section{padding:4.5rem 0}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.78rem;font-weight:800;color:var(--clay);margin:0 0 .5rem}.section h2{font-size:clamp(1.8rem,5vw,3rem);line-height:1.08;letter-spacing:-.04em;margin:.2rem 0 1rem}.lede{max-width:42rem;color:var(--muted);font-size:1.08rem}
       /* Hero apresenta uma promessa concreta e uma única ação principal. */
       .hero{padding:5rem 0 4rem;background:linear-gradient(135deg,var(--paper),var(--cream))}.hero-grid{display:grid;gap:2rem;align-items:center}.hero h1{max-width:12ch;font-size:clamp(2.7rem,11vw,6.2rem);line-height:.95;letter-spacing:-.07em;margin:0}.hero h1 em{font-style:normal;color:var(--clay)}.hero-card{background:var(--ink);color:var(--white);border-radius:var(--radius);padding:1.4rem;box-shadow:var(--shadow)}.hero-card strong{color:var(--sun)}.portrait{position:relative;margin:0 auto 1.5rem;max-width:20rem;padding:.65rem;background:var(--sun);border-radius:48% 52% 42% 58% / 55% 43% 57% 45%;transform:rotate(2deg)}.portrait img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;border:4px solid var(--paper);border-radius:45% 55% 48% 52% / 52% 45% 55% 48%;transform:rotate(-2deg)}.portrait figcaption{position:absolute;right:-.4rem;bottom:1rem;background:var(--clay);color:var(--white);padding:.35rem .7rem;border-radius:999px;font-size:.8rem;font-weight:800;transform:rotate(-5deg)}
       /* Botões possuem aparência e texto de ação claros, inclusive sem depender de cor. */
-      .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}.button{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;border:2px solid var(--ink);border-radius:999px;padding:.65rem 1.05rem;font-weight:800;background:var(--ink);color:var(--white)}.button.secondary{background:transparent;color:var(--ink)}.button:hover{transform:translateY(-1px)}
+      .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}.button{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;border:2px solid var(--ink);border-radius:999px;padding:.65rem 1.05rem;font-weight:800;background:var(--ink);color:var(--white);transition:background-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease}.button.secondary{background:transparent;color:var(--ink)}.button:hover{background:var(--clay);color:var(--white);transform:translateY(-1px);box-shadow:0 4px 10px var(--card-shadow)}.button.secondary:hover{background:var(--cream);color:var(--ink)}
       /* Grades de cartões organizam serviços sem esconder informação em carrosséis. */
       .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem;margin-top:2rem}.card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem;box-shadow:0 6px 20px var(--card-shadow)}.card h3{margin-top:0;font-size:1.2rem}.card p{color:var(--muted);margin-bottom:0}.tag{display:inline-block;background:var(--cream);padding:.2rem .55rem;border-radius:999px;font-size:.78rem;font-weight:750}
       /* Tabela usa rolagem horizontal controlada para preservar leitura no celular. */
@@ -46,7 +103,7 @@
       @media (min-width:46rem){.hero-grid{grid-template-columns:1.15fr .85fr}.footer-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(3,1fr)}}
       @media (max-width:45.99rem){.portrait{max-width:16rem}}
       /* Pessoas que pedem menos movimento recebem uma experiência estável. */
-      @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.button:hover{transform:none}}
+      @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.button:hover,.theme-toggle:hover{transform:none}}
     </style>
   </head>
   <body>
@@ -58,7 +115,7 @@
       <div class="nav-wrap">
         <a class="brand" href="#inicio" aria-label="nerd de aluguel, início">nerd <span>de aluguel</span></a>
         <nav aria-label="navegação principal">
-          <ul><li><a href="#servicos">serviços</a></li><li><a href="#precos">valores</a></li><li><a href="#contato">contato</a></li><li><button class="theme-toggle" type="button" id="theme-toggle" aria-label="mudar tema" aria-live="polite">escurecer</button></li></ul>
+          <ul><li><a href="#servicos">serviços</a></li><li><a href="#precos">valores</a></li><li><a href="#contato">contato</a></li><li><button class="theme-toggle" type="button" id="theme-toggle" aria-label="modo dia ativo. ativar modo tarde" aria-live="polite">☀ modo dia</button></li></ul>
         </nav>
       </div>
     </header>
@@ -102,20 +159,50 @@
 
     <!-- JavaScript mínimo preserva a página funcional mesmo quando scripts estão bloqueados. -->
     <script>
+      // Estados nomeados mantêm o ciclo de temas previsível e independente da paleta visual.
       const themes = [
-        { name: "dia", value: "" },
-        { name: "noite", value: "night" },
-        { name: "tarde", value: "pan-african" }
+        { name: "dia", icon: "☀", value: "" },
+        { name: "tarde", icon: "🌇", value: "afternoon" },
+        { name: "noite", icon: "☾", value: "night" }
       ];
       const themeToggle = document.querySelector("#theme-toggle");
+      const themeStorageKey = "nerd-de-aluguel-theme";
       let themeIndex = 0;
+
+      // Aplica o estado, atualiza o texto visível e anuncia a próxima ação ao leitor de tela.
+      const applyTheme = (index) => {
+        const theme = themes[index];
+        themeIndex = index;
+        if (theme.value) {
+          document.body.dataset.theme = theme.value;
+        } else {
+          delete document.body.dataset.theme;
+        }
+        if (themeToggle) {
+          const nextTheme = themes[(index + 1) % themes.length];
+          themeToggle.textContent = `${theme.icon} modo ${theme.name}`;
+          themeToggle.setAttribute("aria-label", `modo ${theme.name} ativo. ativar modo ${nextTheme.name}`);
+        }
+        try {
+          localStorage.setItem(themeStorageKey, theme.name);
+        } catch (error) {
+          // A página continua funcional quando o navegador bloqueia armazenamento local.
+        }
+      };
+
+      // Restaura a escolha salva sem impedir o primeiro carregamento em navegadores restritos.
+      let savedTheme = null;
+      try {
+        savedTheme = localStorage.getItem(themeStorageKey);
+      } catch (error) {
+        savedTheme = null;
+      }
+      const savedIndex = themes.findIndex((theme) => theme.name === savedTheme);
+      applyTheme(savedIndex >= 0 ? savedIndex : 0);
+
       if (themeToggle) {
         themeToggle.addEventListener("click", () => {
-          themeIndex = (themeIndex + 1) % themes.length;
-          const theme = themes[themeIndex];
-          document.body.dataset.theme = theme.value;
-          themeToggle.textContent = `modo ${theme.name}`;
-          themeToggle.setAttribute("aria-label", `tema atual: ${theme.name}. clique para mudar`);
+          applyTheme((themeIndex + 1) % themes.length);
         });
       }
 
